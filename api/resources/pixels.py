@@ -4,14 +4,11 @@ from flask_restful import Resource
 from .. import db
 from models import Pixel
 
-
 class PixelsApi(Resource):
 
     def post(self):
-        '''
         if not request.get_json():
             abort(400)
-        '''
         updates = request.get_json()
         for update in updates['pixels']:
             pixel = Pixel.query.filter(Pixel.pixel_x == update['x'])\
