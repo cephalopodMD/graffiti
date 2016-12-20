@@ -1,5 +1,7 @@
-__author__ = 'acl3qb'
+_author__ = 'cephalopodMD'
+
 from .. import db
+import random
 
 class Pixel(db.Model):
 
@@ -19,7 +21,8 @@ class Pixel(db.Model):
         # requires x and y
         self.pixel_x = d['x']
         self.pixel_y = d['y']
-        self.pixel_color = 0
+        #TODO multiple random colors
+        self.pixel_color = d.get('color', bool(random.getrandbits(1)))
         self.pixel_last_updated = 0
         self.pixel_edit_lock = 0
         self.pixel_canvas = 1

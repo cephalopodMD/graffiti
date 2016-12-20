@@ -1,3 +1,3 @@
-__author__ = 'acl3qb'
+__author__ = 'cephalopodMD'
 
 from . import pixels
